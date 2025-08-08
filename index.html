@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Red Lock - Arka Plan Testi</title>
+<title>Red Lock - Ana Sayfa</title>
 <style>
     body {
         margin: 0;
@@ -11,11 +11,11 @@
         font-family: Arial, sans-serif;
         height: 100vh;
         color: white;
-        position: relative;
-        overflow: hidden;
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
     }
 
     /* Arka plan resmi */
@@ -31,28 +31,32 @@
         z-index: -1;
     }
 
-    .content {
-        max-width: 800px;
-        margin: auto;
-        padding: 40px;
-        background: rgba(0, 0, 0, 0.4);
-        border-radius: 10px;
-        text-align: center;
+    .container {
+        max-width: 900px;
+        padding: 20px;
+        animation: fadeIn 1.2s ease forwards;
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        margin-bottom: 20px;
     }
 
-    p {
-        line-height: 1.6;
-        font-size: 1.1rem;
-        margin-bottom: 30px;
+    h2 {
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-bottom: 40px;
+        opacity: 0.9;
     }
 
-    /* Buton */
-    .next-btn {
-        display: inline-block;
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
         padding: 15px 30px;
         background: linear-gradient(45deg, #ff4b2b, #ff416c);
         color: white;
@@ -63,23 +67,27 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
-    .next-btn:hover {
+    .btn:hover {
         transform: scale(1.1);
         background: linear-gradient(45deg, #ff416c, #ff4b2b);
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 </head>
 <body>
 
-<div class="content">
-    <h1>Red Lock'a Hoş Geldin</h1>
-    <p>
-        Bu sayfa, manga arka planlı yeni tasarımın test versiyonudur.  
-        Arka planda bulanıklaştırılmış manga sahnesi, ön planda okunabilir metin yer alır.  
-        Hikaye bölümlerini, testleri ve mini oyunları bu tasarım üzerine inşa edeceğiz.
-    </p>
-    <a href="bolum2.html" class="next-btn">Diğer Bölüme Geç</a>
+<div class="container">
+    <h1>RED LOCK'A HOŞ GELDİNİZ</h1>
+    <h2>"EGOİST OLMAK SADECE KENDİNİ BEĞENMEK DEĞİLDİR"</h2>
+    <div class="buttons">
+        <a href="hikaye.html" class="btn">OKUMAYA BAŞLA</a>
+        <a href="mini-oyun.html" class="btn">MİNİ OYUN OYNA</a>
+    </div>
 </div>
 
 </body>
