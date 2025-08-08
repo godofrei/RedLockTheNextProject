@@ -34,7 +34,8 @@
     .container {
         max-width: 900px;
         padding: 20px;
-        animation: fadeIn 1.2s ease forwards;
+        opacity: 0;
+        animation: fadeIn 1.5s ease forwards;
     }
 
     h1 {
@@ -73,6 +74,7 @@
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
 
+    /* Açılış animasyonu */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
