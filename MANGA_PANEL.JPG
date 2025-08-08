@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Red Lock - Bölüm 1</title>
+<style>
+  :root{ --accent1:#ff4b2b; --accent2:#ff416c; --text-black: #111; }
+
+  html,body{ height:100%; margin:0; }
+  body{
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background:#000;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    animation: pageFade 0.8s ease both;
+  }
+
+  /* ARKA PLAN (manga panel) */
+  .bg{
+    position:fixed;
+    inset:0;
+    background-image: url('MANGA_PANEL.jpg'); /* <-- burada görsel olacak */
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.06);
+    filter: contrast(0.95) saturate(0.9);
+    z-index:-3;
+    animation: parallax 12s ease-in-out infinite alternate;
+  }
+
+  /* KARARMA / VİNYET */
+  .dim{
+    position:fixed;
+    inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.6));
+    z-index:-2;
+  }
+
+  /* Merkez içerik */
+  .wrap{
+    position: relative;
+    z-index: 2;
+    max-width: 980px;
+    padding: 28px;
+    text-align:center;
+    width: calc(100% - 48px);
+  }
+
+  /* Manga başlık - kalın stroke */
+  h1{
+    font-size: clamp(28px, 6vw, 56px);
+    margin: 6px 0 10px 0;
+    line-height:1;
+    letter-spacing:2px;
+    color: #fff;
+    -webkit-text-stroke: 3px rgba(0,0,0,0.95);
+    text-transform: uppercase;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  }
+
+  /* Manga alıntı - baloncuk görünümü */
+  .bubble{
+    display:inline-block;
+    max-width: 780px;
+    background: rgba(255,255,255,0.95);
+    color: var(--text-black);
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 3px solid #000;
+    font-weight:700;
+    font-size: clamp(14px, 2.2vw, 20px);
+    box-shadow: 6px 10px 0 rgba(0,0,0,0.25);
+    margin-bottom: 28px;
+    position: relative;
+  }
+  /* baloncuk kuyruğu (iki kat: siyah sınır + beyaz iç) */
+  .bubble::before{
+    content:"";
+    position:absolute;
+    left:38px;
+    bottom:-22px;
+    border-width: 18px 12px 0 12px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+    transform: rotate(-8deg);
+  }
+  .bubble::after{
+    content:"";
+    position:absolute;
+    left:40px;
+    bottom:-18px;
+    border-width: 14px 9px 0 9px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    transform: rotate(-8deg);
+  }
+
+  /* Butonlar */
+  .btns{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:6px;
+  }
+  .btn{
+    display:inline-block;
+    padding:12px 26px;
+    border-radius:999px;
+    background: linear-gradient(45deg,var(--accent1),var(--accent2));
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    letter-spacing:0.6px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+    transform-origin:center;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+  .btn:hover{ transform: translateY(-4px) scale(1.04); box-shadow: 0 14px 36px rgba(0,0,0,0.45); }
+
+  /* Ek küçük "manga style" bölüm etiketi - panelin üstüne hafif yerleştirilmiş */
+  .tag{
+    display:inline-block;
+    margin-top: 18px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding:6px 12px;
+    border-radius:8px;
+    font-weight:700;
+    border:2px solid rgba(255,255,255,0.08);
+    -webkit-text-stroke: 0.8px rgba(0,0,0,0.6);
+  }
+
+  /* Animasyonlar */
+  @keyframes parallax{
+    0% { transform: scale(1.06) translateY(0px); }
+    100% { transform: scale(1.06) translateY(-28px); }
+  }
+  @keyframes pageFade{
+    from{ opacity:0; transform: translateY(6px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width:640px){
+    .bubble{ padding:10px 14px; }
+    h1{ -webkit-text-stroke: 2px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Arka plan (yer tutucu) -->
+  <div class="bg" aria-hidden="true"></div>
+  <div class="dim" aria-hidden="true"></div>
+
+  <main class="wrap" role="main">
+    <div class="tag">BÖLÜM 1</div>
+    <h1>RED LOCK'A HOŞ GELDİNİZ</h1>
+
+    <div class="bubble">“Egoist olmak sadece kendini beğenmek değildir.”</div>
+
+    <div class="btns">
+      <a class="btn" href="hikaye.html">OKUMAYA BAŞLA</a>
+      <a class="btn" href="mini-oyun.html">MİNİ OYUN OYNA</a>
+    </div>
+  </main>
+
+</body>
+</html>
