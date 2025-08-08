@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Red Lock - Ana Sayfa</title>
+<title>Red Lock - Bölüm 1</title>
 <style>
     body {
         margin: 0;
@@ -16,9 +16,11 @@
         align-items: center;
         text-align: center;
         overflow: hidden;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
     }
 
-    /* Arka plan resmi */
+    /* Parallax arka plan */
     body::before {
         content: "";
         position: fixed;
@@ -26,35 +28,38 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('https://w0.peakpx.com/wallpaper/446/537/HD-wallpaper-blue-lock-bachira-blue-lock-manga.jpg') no-repeat center center/cover;
-        filter: blur(4px) brightness(0.5);
+        background: url('https://w0.peakpx.com/wallpaper/835/51/HD-wallpaper-blue-lock-yoichi-isagi-manga.jpg') no-repeat center center/cover;
+        transform: scale(1.05);
+        animation: parallax 8s ease-in-out infinite alternate;
+        z-index: -2;
+    }
+
+    /* Kararma efekti */
+    body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
         z-index: -1;
     }
 
     .container {
         max-width: 900px;
         padding: 20px;
-        opacity: 0;
-        animation: fadeIn 1.5s ease forwards;
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
         margin-bottom: 20px;
     }
 
-    h2 {
-        font-size: 1.5rem;
-        font-weight: normal;
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
         margin-bottom: 40px;
-        opacity: 0.9;
-    }
-
-    .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
     }
 
     .btn {
@@ -74,22 +79,28 @@
         box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
 
-    /* Açılış animasyonu */
+    /* Fade-in */
     @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Parallax animasyonu */
+    @keyframes parallax {
+        0% { transform: scale(1.05) translateY(0px); }
+        100% { transform: scale(1.05) translateY(-20px); }
     }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>RED LOCK'A HOŞ GELDİNİZ</h1>
-    <h2>"EGOİST OLMAK SADECE KENDİNİ BEĞENMEK DEĞİLDİR"</h2>
-    <div class="buttons">
-        <a href="hikaye.html" class="btn">OKUMAYA BAŞLA</a>
-        <a href="mini-oyun.html" class="btn">MİNİ OYUN OYNA</a>
-    </div>
+    <h1>Bölüm 1: Başlangıç</h1>
+    <p>
+        Red Lock macerasının ilk adımı... Bu sayfada hikayenin başlangıcına tanık olacaksınız.  
+        Her şey, seçilen futbolcuların hayatlarını değiştirecek bir davetiyeyle başlıyor.
+    </p>
+    <a href="bolum2.html" class="btn">Sonraki Bölüm</a>
 </div>
 
 </body>
